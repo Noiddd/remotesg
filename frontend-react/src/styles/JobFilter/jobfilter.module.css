@@ -1,0 +1,18 @@
+.jobFilterContainer {
+  border: solid;
+  margin-left: 70px;
+  margin-top: 50px;
+  width: 700px;
+  height: 50px;
+  display: flex;
+  gap: 10px;
+}
+
+.jobIconContainer {
+  text-align: center;
+  width: 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
