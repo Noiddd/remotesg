@@ -9,7 +9,10 @@ import {
   faPenClip,
   faUserGraduate,
   faCoins,
+  faCalculator,
+  faSuitcase,
 } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import JobIcon from "./JobIcon";
 
 const JobFilter = () => {
@@ -22,10 +25,20 @@ const JobFilter = () => {
     { icon: faPenClip, jobTitle: "Admin" },
     { icon: faCoins, jobTitle: "Finance" },
     { icon: faUserGraduate, jobTitle: "Education" },
+    { icon: faCalculator, jobTitle: "Accounting" },
   ];
 
   return (
     <div className={styles.jobFilterContainer}>
+      <div className={styles.jobIconContainer}>
+        <FontAwesomeIcon
+          icon={faSuitcase}
+          size="lg"
+          className={styles.faIcon}
+        />
+        <div className={styles.jobTitle}>All jobs</div>
+      </div>
+      <div className={styles.filterSeperate}></div>
       {iconList.map((icon) => {
         return (
           <JobIcon
