@@ -1,12 +1,16 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
+import SalaryDropDown from "../../(filterdropdown)/salarydropdown/page";
 
 export default function FilterSalaryButton() {
+  const [salaryDropDownOpen, setSalaryDropDownOpen] = useState(false);
   return (
     <div>
       <button
-        id="dropdownSalaryButton"
-        className="text-center inline-flex items-center bg-gray-200 text-primary font-bold py-3 px-5 rounded font-nunito hover:bg-gray-300 transition-colors group"
+        className="text-center inline-flex items-center bg-gray-200 text-primary font-bold py-3 px-5 rounded font-nunito hover:bg-gray-300 transition-colors"
         type="button"
+        onClick={() => setSalaryDropDownOpen((prev) => !prev)}
       >
         Filter Salary
         <svg
@@ -25,62 +29,11 @@ export default function FilterSalaryButton() {
           ></path>
         </svg>
       </button>
-
-      <div
-        id="dropdownSalary"
-        className="hidden group-focus:block: z-10 w-48 mt-3 bg-white divide-y divide-gray-100 rounded-lg shadow"
-      >
-        <ul className="p-3 space-y-3 text-sm text-gray-700 dark:text-gray-200">
-          <li>
-            <div class="flex items-center">
-              <input
-                id="checkbox-item-1"
-                type="checkbox"
-                value=""
-                class="w-4 h-4 accent-primary text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-primary focus:ring-1"
-              />
-              <label
-                for="checkbox-item-1"
-                class="ml-2 text-sm font-medium text-primary"
-              >
-                testtesttest
-              </label>
-            </div>
-          </li>
-          <li>
-            <div class="flex items-center">
-              <input
-                id="checkbox-item-2"
-                type="checkbox"
-                value=""
-                class="w-4 h-4 accent-primary text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-primary focus:ring-1"
-              />
-              <label
-                for="checkbox-item-2"
-                class="ml-2 text-sm font-medium text-primary"
-              >
-                test2
-              </label>
-            </div>
-          </li>
-          <li>
-            <div class="flex items-center">
-              <input
-                id="checkbox-item-3"
-                type="checkbox"
-                value=""
-                class="w-4 h-4 accent-primary text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-primary focus:ring-1"
-              />
-              <label
-                for="checkbox-item-3"
-                class="ml-2 text-sm font-medium text-primary"
-              >
-                test3
-              </label>
-            </div>
-          </li>
-        </ul>
-      </div>
+      {salaryDropDownOpen && (
+        <div className="mt-4">
+          <SalaryDropDown />
+        </div>
+      )}
     </div>
   );
 }
