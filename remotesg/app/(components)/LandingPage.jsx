@@ -1,6 +1,6 @@
 import React from "react";
-import PostAJobButton from "../(buttons)/postajobbutton/page";
-import ViewAllJobsButton from "../(buttons)/viewalljobsbutton/page";
+import PostAJobButton from "./(buttons)/PostAJobButton";
+import ViewAllJobsButton from "./(buttons)/ViewAllJobButton";
 
 export default function LandingPage() {
   return (

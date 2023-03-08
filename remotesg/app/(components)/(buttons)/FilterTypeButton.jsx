@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import TypeDropDown from "../../(filterdropdown)/typedropdown/page";
+import TypeDropDown from "../(filterdropdown)/TypeDropDownButton";
 
 export default function FilterTypeButton() {
   const [typeDropDownOpen, setTypeDropDownOpen] = useState(false);
@@ -14,7 +14,7 @@ export default function FilterTypeButton() {
       >
         Filter Type
         <svg
-          class="w-4 h-4 ml-2"
+          className="w-4 h-4 ml-2"
           aria-hidden="true"
           fill="none"
           stroke="currentColor"
@@ -22,9 +22,9 @@ export default function FilterTypeButton() {
           xmlns="http://www.w3.org/2000/svg"
         >
           <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="2"
             d="M19 9l-7 7-7-7"
           ></path>
         </svg>

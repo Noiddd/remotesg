@@ -1,7 +1,7 @@
 import "./globals.css";
 
 import { Nunito } from "next/font/google";
-import NavBar from "./(components)/navbar/page";
+import NavBar from "./(components)/NavBar";
 
 const nunito = Nunito({
   weight: ["800"],

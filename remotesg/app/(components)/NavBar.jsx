@@ -1,6 +1,6 @@
-import GetJobAlertButton from "@/app/(components)/(buttons)/getjobalertbutton/page";
-import PostAJobButton from "@/app/(components)/(buttons)/postajobbutton/page";
-import ResourcesButton from "@/app/(components)/(buttons)/resourcesbutton/page";
+import GetJobAlertButton from "@/app/(components)/(buttons)/GetJobAlertButton";
+import PostAJobButton from "@/app/(components)/(buttons)/PostAJobButton";
+import ResourcesButton from "@/app/(components)/(buttons)/BlogButton";
 import Link from "next/link";
 import React from "react";
 
