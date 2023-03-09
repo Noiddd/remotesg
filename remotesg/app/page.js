@@ -1,5 +1,7 @@
 import FilterSalaryButton from "./(components)/(buttons)/FilterSalaryButton";
 import FilterTypeButton from "./(components)/(buttons)/FilterTypeButton";
+import JobCard from "./(components)/JobCard";
+import JobDetails from "./(components)/JobDetails";
 import LandingPage from "./(components)/LandingPage";
 import NumberOfJobs from "./(components)/NumberOfJobs";
 import SearchBar from "./(components)/SearchBar";
@@ -19,59 +21,35 @@ export default async function Home() {
 
   console.log(data.records);
 
-  // var Airtable = require("airtable");
-  // var base = new Airtable({ apiKey: `${API_KEY}` }).base("appXurtrhmRuY40SF");
-
-  // base("JobStreet")
-  //   .select({
-  //     // Selecting the first 3 records in Grid view:
-  //     maxRecords: 100,
-  //     view: "Grid view",
-  //   })
-  //   .eachPage(
-  //     function page(records, fetchNextPage) {
-  //       // This function (`page`) will get called for each page of records.
-  //       let data = [];
-
-  //       records.forEach(function (record) {
-  //         data.push({
-  //           jobTitle: record.get("Job Title"),
-  //           companyName: record.get("Company Name"),
-  //         });
-  //       });
-
-  //       // To fetch the next page of records, call `fetchNextPage`.
-  //       // If there are more records, `page` will get called again.
-  //       // If there are no more records, `done` will get called.
-  //       fetchNextPage();
-  //     },
-  //     function done(err) {
-  //       if (err) {
-  //         console.error(err);
-  //         return;
-  //       }
-  //     }
-  //   );
-
   return (
     <main>
       <LandingPage />
-      <div className="ml-32 mt-20">
-        <div className="w-5/12">
-          <SearchBar />
+      <div className="mx-32 mt-20 max-w-content grid grid-cols-2 gap-32">
+        <div className="w-full">
+          <div className="w-full">
+            <SearchBar />
+          </div>
+          <div className="relative flex items-center w-full mt-4 justify-between">
+            <div className="flex gap-5">
+              <div className="">
+                <FilterTypeButton />
+              </div>
+              <div className="">
+                <FilterSalaryButton />
+              </div>
+            </div>
+            <div className="absolute right-0">
+              <NumberOfJobs />
+            </div>
+          </div>
+          <div className="mt-7 w-full grid 2xl:grid-cols-2 gap-10">
+            {data.records.map((jobData) => {
+              return <JobCard jobData={jobData} />;
+            })}
+          </div>
         </div>
-        <div className="relative flex items-center w-5/12 mt-7 justify-between">
-          <div className="flex gap-5">
-            <div className="">
-              <FilterTypeButton />
-            </div>
-            <div className="">
-              <FilterSalaryButton />
-            </div>
-          </div>
-          <div className="absolute right-0">
-            <NumberOfJobs />
-          </div>
+        <div className="w-full bg-white border border-gray-200 rounded-lg shadow">
+          <JobDetails />
         </div>
       </div>
     </main>

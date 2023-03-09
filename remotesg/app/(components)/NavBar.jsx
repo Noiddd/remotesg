@@ -6,7 +6,7 @@ import React from "react";
 
 export default function NavBar() {
   return (
-    <nav className="flex py-10 pl-24 pr-28 items-center justify-between">
+    <nav className="flex py-10 pl-28 pr-32 items-center justify-between">
       <div>
         <Link
           href="/"
