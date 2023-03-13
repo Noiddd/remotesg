@@ -1,5 +1,4 @@
 import React from "react";
-
 export default function NumberOfJobs() {
   return (
     <div className="text-xs hidden xl:block">
