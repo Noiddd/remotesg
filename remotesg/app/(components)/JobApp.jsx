@@ -38,13 +38,13 @@ export default function JobApp({ data }) {
         <div className="mt-7 w-full grid xl:grid-cols-2 gap-4">
           {data.records.map((jobData) => {
             return (
-              //   <JobCardContainer
-              //     jobData={jobData}
-              //     setJobDetails={setJobDetails}
-              //     key={jobData.id}
-              //   >
-              <JobCard jobData={jobData} key={jobData.id} />
-              // </JobCardContainer>
+              <JobCardContainer
+                jobData={jobData}
+                setJobDetails={setJobDetails}
+                key={jobData.id}
+              >
+                <JobCard jobData={jobData} key={jobData.id} />
+              </JobCardContainer>
             );
           })}
         </div>
